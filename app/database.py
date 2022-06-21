@@ -1,7 +1,8 @@
 from typing import Optional
 from flask import current_app
 from sqlalchemy.exc import SQLAlchemyError
-from app import db
+from create_app import db
+
 
 def get_all(model):
     data = model.query.all()
@@ -17,6 +18,7 @@ def create(instance: db.Model):
 def delete_instance(instance):
     db.session.delete(instance)
     commit_changes()
+
 
 def commit_changes():
     try:
