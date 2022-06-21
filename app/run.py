@@ -13,12 +13,13 @@ import config
 from models import SocketConnection, Notification
 from database import create
 from service import get_subscribed_users
-
-
-sid = None
+from flask_cors import CORS, cross_origin
 
 flask_app = create_app()
-socketio = SocketIO(flask_app, engineio_logger=False, async_mode="eventlet")
+cors = CORS(flask_app)
+flask_app.config['CORS_HEADERS'] = 'Content-Type'
+
+socketio = SocketIO(flask_app, engineio_logger=False, async_mode="eventlet", path="notification", cors_allowed_origins='*')
 
 
 @socketio.on("connect")

@@ -9,7 +9,7 @@
   <body>
     <h1>ecce</h1>
     <script>
-        sock = io("ws://localhost:8091")
+        sock = io("ws://localhost:8080", {path: "/notification"})
         sock.on("new-post", function(message){
             console.log("TU SAM", message)
         })
