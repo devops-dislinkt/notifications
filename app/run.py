@@ -17,9 +17,15 @@ from flask_cors import CORS, cross_origin
 
 flask_app = create_app()
 cors = CORS(flask_app)
-flask_app.config['CORS_HEADERS'] = 'Content-Type'
+flask_app.config["CORS_HEADERS"] = "Content-Type"
 
-socketio = SocketIO(flask_app, engineio_logger=False, async_mode="eventlet", path="notification", cors_allowed_origins='*')
+socketio = SocketIO(
+    flask_app,
+    engineio_logger=False,
+    async_mode="eventlet",
+    path="notification",
+    cors_allowed_origins="*",
+)
 
 
 @socketio.on("connect")
