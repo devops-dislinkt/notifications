@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["specnazm <laketic.milena98@gmail.com>"]
 
+packages = [
+    { include = "app" }
+]
+
 [tool.poetry.dependencies]
 python = "^3.8"
 Flask = "^2.1.2"
