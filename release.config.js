@@ -1,6 +1,6 @@
 module.exports = {
 	branches: ["master", {"name": "dev", "prerelease": true}],
-	repositoryUrl: "https://github.com/devops-dislinkt/user-post.git",
+	repositoryUrl: "https://github.com/devops-dislinkt/notifications.git",
 	plugins: [
 		"@semantic-release/commit-analyzer",
 		"@semantic-release/release-notes-generator",
