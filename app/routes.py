@@ -25,7 +25,8 @@ def toggle_notif_profile(observed_username: str):
 def get_notif_status(observed_username: str):
     '''
     Get current notification status for observed username. 
-    Does currently logged in user has turned on or turned off notifications for observed user?
+    Does currently logged in user has turned on or turned off 
+    notifications for observed user?
     If notif turned on returns true, if notif turned off returns false.
     '''
     user: str = request.headers.get('user')
