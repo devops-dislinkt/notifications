@@ -62,3 +62,13 @@ def get_subscribed_users(post_owner: str):
     )
 
     return subscribers
+
+
+def get_notif_status(observed_username: str, subscriber_username: str):
+    """True corresponds to turned on, false corresponds to turned off."""
+    notif_object = Notification.query.get((subscriber_username, observed_username))
+    if notif_object: 
+        return True
+
+    else: 
+        return False
